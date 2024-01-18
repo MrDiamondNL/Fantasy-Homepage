@@ -1,3 +1,6 @@
+
+// window.onload = createGameBoxList();
+
 function newRosterCard() {
     let x = document.getElementById("player-search").value;
     document.getElementById("roster-section").innerHTML += 
@@ -28,6 +31,17 @@ function newWatchlistCard(playerName) {
     "</div>"
 }
 
-function deleteCard(ele) {
-    let x = document.getElement
+function getRandomInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function createGameBoxList() {
+    let games = getRandomInteger(1, 16);
+    for (let x = 0; x < games; x++) {
+        document.getElementById("game-listings").innerHTML += 
+        "<div class=\"game-box\">" + 
+            "<h3>Team 1</h3>" + 
+            "<h3>Team 2</h3>" +
+        "</div>";        
+    }
 }
