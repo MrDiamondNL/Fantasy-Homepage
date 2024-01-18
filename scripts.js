@@ -35,6 +35,15 @@ function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+// const url = 'https://api-web.nhle.com/v1/schedule/now';
+
+// async function getGameData() {
+//     const response = await fetch(url);
+//     const data = await response.json();
+//     let x = parseInt(data.gameWeek[0].numberOfGames);
+//     return x;
+// }
+
 function createGameBoxList() {
     let games = getRandomInteger(1, 16);
     for (let x = 0; x < games; x++) {
@@ -45,3 +54,4 @@ function createGameBoxList() {
         "</div>";        
     }
 }
+
