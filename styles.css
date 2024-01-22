@@ -7,6 +7,58 @@ body {
     background-repeat: no-repeat;
     background-size: 100vw, 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.banner-bar {
+    height: 100px;
+    border: 0px;
+    width: 100%;
+}
+
+.title-span {
+    font-weight: 400;
+    font-size: 2em;
+}
+
+.mini-logo {
+    height: 100px;
+    width: 100px;
+    float: left;
+}
+
+ul.navigation-links {
+    list-style-type: none;
+    display: flex;
+    float: right;
+    align-items: center;
+    margin: 0px;
+    justify-content: flex-end;
+}
+
+
+ul li {    
+    display: flex;
+    float: right;
+    width: 100px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    padding: auto;
+    transition: background 0.5s;
+}
+
+ul li:hover {
+    cursor: pointer;
+    background-color: grey;
 }
 
 

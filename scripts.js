@@ -1,5 +1,27 @@
 
-// window.onload = createGameBoxList();
+const url = 'https://api-web.nhle.com/v1/schedule/now';
+const numOfGames = getGameData();
+window.onload = createGameBoxList();
+
+function loadHomePage() {
+    location.href = './index.html';
+}
+
+function loadNewsPage() {
+    location.href = './news.html';
+}
+
+function loadPlayersPage() {
+    location.href = './players.html';
+}
+
+function loadFantasyPage() {
+    location.href = './fantasy_team.html';
+}
+
+function loadShopPage() {
+    location.href = './shop.html';
+}
 
 function newRosterCard() {
     let x = document.getElementById("player-search").value;
@@ -35,23 +57,30 @@ function getRandomInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-// const url = 'https://api-web.nhle.com/v1/schedule/now';
 
-// async function getGameData() {
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     let x = parseInt(data.gameWeek[0].numberOfGames);
-//     return x;
-// }
+
+async function getGameData() {
+    const response = await fetch(url);
+    const data = await response.json();
+    let x = data.gameWeek[0].numberOfGames.valueOf();
+    const y = JSON.parse(x);
+    const z = parseInt(y);
+    console.log(z);
+    console.log(typeof x);
+    return z;
+}
 
 function createGameBoxList() {
-    let games = getRandomInteger(1, 16);
-    for (let x = 0; x < games; x++) {
+    // let games = getGameData();
+    console.log(numOfGames);
+    console.log(typeof numOfGames);
+    for (let x = 0; x < Number(numOfGames); x++) {
         document.getElementById("game-listings").innerHTML += 
         "<div class=\"game-box\">" + 
             "<h3>Team 1</h3>" + 
             "<h3>Team 2</h3>" +
-        "</div>";        
-    }
+        "</div>";
+        console.log('true');        
+    }    
 }
 
