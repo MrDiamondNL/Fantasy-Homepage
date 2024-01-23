@@ -225,4 +225,32 @@ ul li:hover {
     box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
 }
 
+.shop-section {
+    display: flex;
+}
 
+.shop-item {
+    width: 400px;
+    height: 500px;
+    background-color: white;
+}
+
+.shop-item img {
+    height: 400px;
+    width: 400px;
+}
+
+.shop-item span {
+
+}
+
+.cart-section {
+    background-color: white;
+    width: 400px;
+    position: absolute;
+    right: 0;
+}
+
+.cart-row {
+    width: 100%;
+}
