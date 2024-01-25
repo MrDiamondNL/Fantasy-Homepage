@@ -11,8 +11,8 @@ function loadNewsPage() {
     location.href = './news.html';
 }
 
-function loadPlayersPage() {
-    location.href = './players.html';
+function loadStandingsPage() {
+    location.href = './standings.html';
 }
 
 function loadFantasyPage() {
@@ -21,6 +21,18 @@ function loadFantasyPage() {
 
 function loadShopPage() {
     location.href = './shop.html';
+}
+
+function loadGitHubPage() {
+    window.open('https://github.com/MrDiamondNL');
+}
+
+function loadFacebookPage() {
+    window.open('https://www.facebook.com/sam.diamond.507');
+}
+
+function loadLinkedInPage(){
+    window.open('https://www.linkedin.com/in/sam-diamond-8644382a7/')
 }
 
 function newRosterCard() {

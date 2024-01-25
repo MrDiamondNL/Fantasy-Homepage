@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
+    <script src="shop.js"></script>
     <title>Fantasy Hockey Book Shop</title>
 </head>
 <body onload="createGameBoxList()">
@@ -23,7 +24,7 @@
             <span class="title-span">Fantasy Hockey Book</span>
             <ul class="navigation-links">                
                 <li onclick="loadNewsPage()">News</li>
-                <li onclick="loadPlayersPage()">Players</li>
+                <li onclick="loadStandingsPage()">Standings</li>
                 <li onclick="loadFantasyPage()">Fantasy Team</li>
                 <li onclick="loadShopPage()">Shop</li>
             </ul>
@@ -35,36 +36,36 @@
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Jersey 1.jpg" title="BA Jersey">
                     <span class="price">$99.99</span>
-                    <button class="button-1" value="99.99" onclick="addToCartClicked()">Add To Cart</button>
+                    <button class="button-1 add-button" value="99.99" onclick="addToCartClicked()">Add To Cart</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Jersey 2.jpg" title="OH Jersey">
                     <span class="price">$99.99</span>
-                    <button class="button-1" value="99.99">Add To Cart</button>
+                    <button class="button-1 add-button" value="99.99" onclick="addToCartClicked()">Add To Cart</button>
                 </div>
             </div>            
             <div class="shop-row">
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Jersey 3.jpg" title="21 Jersey">
                     <span class="price">$99.99</span>
-                    <button class="button-1" value="99.99">Add To Cart</button>
+                    <button class="button-1 add-button" value="99.99" onclick="addToCartClicked()">Add To Cart</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Toque 1.jpg" title="Grey Toque">
                     <span class="price">$29.99</span>
-                    <button class="button-1" value="29.99">Add To Cart</button>
+                    <button class="button-1 add-button" value="29.99" onclick="addToCartClicked()">Add To Cart</button>
                 </div>
             </div>            
             <div class="shop-row">
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Toque 2.jpg" title="Blue Toque">
                     <span class="price">$29.99</span>
-                    <button class="button-1" value="29.99">Add To Cart</button>
+                    <button class="button-1 add-button" value="29.99" onclick="addToCartClicked()">Add To Cart</button>
                 </div>
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Mug 1.jpg" title="Hockey Mug">
                     <span class="price">$19.99</span>
-                    <button class="button-1" value="19.99">Add To Cart</button>
+                    <button class="button-1 add-button" value="19.99" onclick="addToCartClicked()">Add To Cart</button>
                 </div>
             </div>            
         </div>
@@ -77,9 +78,16 @@
             </div>   
             <div class="cart-contents">
                 
-            </div>         
+            </div>
+            <div class="cart-total">
+                <span class="cart-total-text">Total: </span><span class="cart-total-display"></span>
+            </div>
         </div> 
     </div>
+    <footer class="footer-main">
+        <img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40' onclick="loadGitHubPage()"> 
+        <img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg' alt='facebook' height='40' onclick="loadFacebookPage()">
+        <img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg' alt='linkedin' height='40' onclick="loadLinkedInPage()">
+    </footer>
 </body>
 </html>
-<script src="shop.js"></script>
