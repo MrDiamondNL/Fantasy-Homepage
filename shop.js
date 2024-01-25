@@ -67,14 +67,17 @@ function delShopItem() {
 
 function doTheMath() {
     let total = 0;
+    let itemPrice = 0;
+    let itemAmount = 0;
+    let totalToAdd = 0;
     let cartContents = document.getElementsByClassName('cart-contents')[0];
     let cartRows = cartContents.getElementsByClassName('cart-row');
     for (let x = 0; x < cartRows.length; x++) {
         let currentRow = cartRows[x];
-        let itemPrice = currentRow.getElementsByClassName('cart-item-price')[0].innerText;
-        let itemAmount = currentRow.getElementsByClassName('cart-item-quantity')[0].value;
-        let totalToAdd = itemPrice * itemAmount;
-        total += total + totalToAdd;
+        itemPrice = currentRow.getElementsByClassName('cart-item-price')[0].innerText;
+        itemAmount = currentRow.getElementsByClassName('cart-item-quantity')[0].value;
+        totalToAdd = itemPrice * itemAmount;
+        total = total + totalToAdd;
     }
     document.getElementsByClassName('cart-total-display')[0].innerText = "\$ " + total;
     // console.log(cartRows);
