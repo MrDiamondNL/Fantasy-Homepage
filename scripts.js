@@ -1,7 +1,7 @@
 
 const url = 'https://api-web.nhle.com/v1/schedule/now';
 // const numOfGames = getGameData();
-window.onload = createGameBoxList();
+// window.onload = createGameBoxList();
 // let games = getGameData();
 
 function loadHomePage() {
