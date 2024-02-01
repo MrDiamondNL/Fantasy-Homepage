@@ -108,6 +108,38 @@ ul li:hover {
     margin: 0px 20px;
 }
 
+.game-box .home-row, .game-box .away-row {
+    display: inline-block;
+    vertical-align: middle;
+    height: 50px;
+    width: 175px;
+}
+
+.game-box span {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.home-team-score, .away-team-score {
+    display: inline-block;
+    position: relative;
+    left: 50px;
+    bottom: 20px;
+}
+
+.home-team-abbrev, .away-team-abbrev {
+    display: inline-block;
+    position: relative;
+    left: 20px;
+    bottom: 20px;
+}
+
+.game-box img {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
 /* .top-red-line {
     height: 5px;
     color: red;

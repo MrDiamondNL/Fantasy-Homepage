@@ -6,14 +6,23 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
     <script src="shop.js"></script>
+    <script src="gamescores.js"></script>
     <title>Fantasy Hockey Book Shop</title>
 </head>
-<body onload="createGameBoxList()">
+<body onload="getGameScores()">
     <div class="game-listings" id="game-listings">
-        <!-- <div class="game-box">
-            <h3>Team 1</h3>
-            <h3>Team 2</h3>
-        </div> -->
+        <div class="game-box">
+            <div class="home-row">
+                <img src="" alt="" class="home-team-logo">
+                <span class="home-team-abbrev">Team 1</span>
+                <span class="home-team-score"></span>
+            </div>
+            <div class="away-row">
+                <img src="" alt="" class="away-team-logo">
+                <span class="away-team-abbrev">Team 2</span>
+                <span class="away-team-score"></span>
+            </div>
+        </div>
         
         
     </div>
