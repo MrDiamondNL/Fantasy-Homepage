@@ -1,5 +1,5 @@
-const urlLineScores = 'https://api-web.nhle.com/v1/score/now';
-const urlNumOfGames = 'https://api-web.nhle.com/v1/schedule/now';
+const urlLineScores = 'https://api-web.nhle.com/v1/score/2023-10-24';
+const urlNumOfGames = 'https://api-web.nhle.com/v1/schedule/2023-10-24';
 
 async function getGameScores() {
     const responseNumGames = await fetch(urlNumOfGames);
@@ -44,7 +44,7 @@ async function getGameScores() {
         `
     }
 
-    
+    console.log(dataGameScores);
     
 }
 
