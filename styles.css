@@ -157,6 +157,35 @@ ul li:hover {
     
 }
 
+.standings-section {
+    background-color: white;
+}
+
+.list-header {    
+    min-width: 100%;
+}
+
+.cat-headings {
+    display: flex;
+    width: 800px;
+}
+
+.cat-headings h3 {
+    display: inline-block;
+}
+
+.team-col {
+    width: 40%;
+}
+
+.rank-col, .team-col, .gp-col, .wins-col, .loss-col, .ot-col, .points-col {
+    min-width: 10%;
+}
+
+.team-listings-row {
+    font-weight: bold;
+}
+
 .roster-section {
     background-color: aqua;
     flex-grow: 1;

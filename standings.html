@@ -6,18 +6,12 @@
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js"></script>
     <script src="gamescores.js"></script>
+    <script src="standings.js"></script>
     <title>Fantasy Book Team Page</title>
 </head>
 <body onload="getGameScores()">
     <div class="game-listings" id="game-listings">
-        <!-- <div class="game-box">
-            <h3>Team 1</h3>
-            <h3>Team 2</h3>
-        </div> -->
-        
-        
     </div>
-    <!-- <hr class="top-red-line"/> -->
     <header class="page-header">
         <div class="banner-bar">      
             <img src="./images/Fantasy Hockey Book mini logo.png" alt="Fantasy Hockey Book Logo" class="mini-logo" onclick="loadHomePage()">      
@@ -30,8 +24,23 @@
             </ul>
         </div>
     </header>
-    <div class="main-section">        
-        
+    <div class="main-section">
+        <div class="standings-section">
+            <div class="list-header-main"><h1 class="list-header">Conference</h1>
+            </div>
+            <div class="cat-headings">
+                <h3 class="rank-number rank-col">Rank</h3>
+                <h3 class="team-name team-col">Team</h3>
+                <h3 class="games-played gp-col">GP</h3>
+                <h3 class="wins-rec wins-col">W</h3>
+                <h3 class="loss-rec loss-col">L</h3>
+                <h3 class="otloss ot-col">OT</h3>
+                <h3 class="points-total points-col">Points</h3>
+            </div>
+            <div class="conference-table" id="conference-table">
+
+            </div>
+        </div>        
     </div>
     <footer class="footer-main">
         <img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40' onclick="loadGitHubPage()"> 
