@@ -159,6 +159,9 @@ ul li:hover {
 
 .standings-section {
     background-color: white;
+    overflow-y: scroll;
+    margin-bottom: 50px;
+
 }
 
 .list-header {    
@@ -178,12 +181,32 @@ ul li:hover {
     width: 40%;
 }
 
-.rank-col, .team-col, .gp-col, .wins-col, .loss-col, .ot-col, .points-col {
+.rank-col, .gp-col, .wins-col, .loss-col, .ot-col, .points-col {
     min-width: 10%;
 }
 
-.team-listings-row {
-    font-weight: bold;
+.team-listing-row {
+    width: 800px;
+    display: flex;    
+    justify-content: center;
+}
+
+.team-listing-row:nth-child(even) {
+    background-color: lightgray;
+}
+
+span.rank-col, span.team-col, span.gp-col, span.wins-col, span.loss-col, span.ot-col, span.points-col {
+    display: inline-block;
+    font-size: 1.2em;
+    min-width: 10%;
+    height: 50px;    
+    vertical-align: middle;
+    
+}
+
+img.standings-team-logo {
+    height: 50px;
+    width: 50px;
 }
 
 .roster-section {

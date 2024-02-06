@@ -1,5 +1,11 @@
 const standingsUrl = 'https://api-web.nhle.com/v1/standings/now';
 const standingsArray = [];
+const atlanticArray = [];
+const metroArray = [];
+const centralArray = [];
+const pacificArray = [];
+const easternArray = [];
+const westernArray = [];
 let teamObject = {};
 let teamRank = 0;
 let teamName = "";
@@ -11,27 +17,6 @@ let teamPoints = 0;
 let teamLogo = "";
 let confAbbrev = "";
 let divAbbrev = "";
-
-// async function testFunction() {
-//     const response = await fetch(standingsUrl);
-//     const data = await response.json();    
-
-//     for (let x = 0; x < data.standings.length; x++) {
-//         teamRank = x + 1;
-//         teamName = data.standings[x].teamName.default;
-//         teamGamesPlayed = data.standings[x].gamesPlayed;
-//         teamWins = data.standings[x].regulationPlusOtWins;
-//         teamLosses = data.standings[x].losses;
-//         teamOt = data.standings[x].otLosses;
-//         teamPoints = data.standings[x].points;
-//         teamLogo = data.standings[x].teamLogo;
-//         confAbbrev = data.standings[x].conferenceAbbrev;
-//         divAbbrev = data.standings[x].divisionAbbrev;
-//         teamObject = {teamRank, teamName, teamGamesPlayed, teamWins, teamLosses, teamOt, teamPoints, teamLogo, confAbbrev, divAbbrev}
-
-//         standingsArray.push(teamObject);
-//     }
-// }
 
 async function getData(url) {
     const response = await fetch(url);
@@ -60,13 +45,13 @@ async function createStandingsArray() {
 }
 
 
-async function createConferenceTable() {
+async function createLeagueTable() {
     await createStandingsArray();
     for (let x = 0; x < standingsArray.length; x++) {
         document.getElementById("conference-table").innerHTML += `
         <div class="team-listing-row">
             <span class="rank-col">${standingsArray[x].teamRank}</span>
-            <span class="team-col">${standingsArray[x].teamName}</span>
+            <span class="team-col"><img class="standings-team-logo" src="${standingsArray[x].teamLogo}" />${standingsArray[x].teamName}</span>
             <span class="gp-col">${standingsArray[x].teamGamesPlayed}</span>
             <span class="wins-col">${standingsArray[x].teamWins}</span>
             <span class="loss-col">${standingsArray[x].teamLosses}</span>
@@ -77,6 +62,31 @@ async function createConferenceTable() {
     }
 }
 
-createConferenceTable();
+function createConferenceArray() {
+    for (let x = 0; x < standingsArray.length; x++) {
+        if (standingsArray[x].confAbbrev == "W") {
+            westernArray.push(standingsArray[x]);
+        } else {
+            easternArray.push(standingsArray[x]);
+        }
+    }
+}
+
+function createDivisionArray() {
+    for (let x = 0; x < standingsArray.length; x++) {
+        if (standingsArray[x].divAbbrev == "A") {
+            atlanticArray.push(standingsArray[x]);
+        } else 
+        if (standingsArray[x].divAbbrev == "M") {
+            metroArray.push(standingsArray[x]);
+        } else
+        if (standingsArray[x].divAbbrev == "P") {
+            pacificArray.push(standingsArray[x]);
+        } else {
+            centralArray.push(standingsArray[x]);
+        }        
+    }
+}
+createLeagueTable();
 
 
