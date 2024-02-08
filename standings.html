@@ -9,7 +9,7 @@
     <script src="standings.js"></script>
     <title>Fantasy Book Team Page</title>
 </head>
-<body onload="getGameScores()">
+<body onload="getGameScores(), createLeagueTable()">
     <div class="game-listings" id="game-listings">
     </div>
     <header class="page-header">
@@ -24,10 +24,20 @@
             </ul>
         </div>
     </header>
-    <div class="main-section">
+    <div class="main-section">        
         <div class="standings-section">
-            <div class="list-header-main"><h1 class="list-header">League Standings</h1>
+            <div class="standings-selectors">
+                <ul class="standings-buttons">
+                    <li onclick="createLeagueTable()">League</li>
+                    <li onclick="createConferenceTable()">Conference</li>
+                    <li onclick="createDivisionTable()">Division</li>
+                    <li onclick="createWildCardTable()">Wildcard</li>
+                </ul>
             </div>
+            <div class="list-header-main"><h1 class="list-header">League Standings</h1>
+            </div>     
+            <div class="extra-list-header">
+            </div>       
             <div class="cat-headings">
                 <h3 class="rank-number rank-col">Rank</h3>
                 <h3 class="team-name team-col">Team</h3>
@@ -37,7 +47,7 @@
                 <h3 class="otloss ot-col">OT</h3>
                 <h3 class="points-total points-col">Points</h3>
             </div>
-            <div class="conference-table" id="conference-table">
+            <div class="standings-table" id="standings-table">
 
             </div>
         </div>        
