@@ -95,7 +95,7 @@ ul li:hover {
     height: 150px;
     background-color: rgb(96, 116, 152);
     display: flex;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
     overflow-x: auto;
 }
@@ -103,35 +103,31 @@ ul li:hover {
 .game-box {
     background-color: white;
     border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
     height: 100px;
     flex: 0 0 175px;
     margin: 0px 20px;
 }
 
 .game-box .home-row, .game-box .away-row {
-    display: inline-block;
-    vertical-align: middle;
-    height: 50px;
-    width: 175px;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
 .game-box span {
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1.1em;    
 }
 
 .home-team-score, .away-team-score {
-    display: inline-block;
-    position: relative;
-    left: 50px;
-    bottom: 20px;
+    padding-left: 50px;
 }
 
 .home-team-abbrev, .away-team-abbrev {
-    display: inline-block;
-    position: relative;
-    left: 20px;
-    bottom: 20px;
+    width: 50px;
+    padding-left: 25px;
 }
 
 .game-box img {
@@ -148,7 +144,7 @@ ul li:hover {
 
 .main-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     max-width: 66vw;
     min-width: 50vw;
@@ -161,7 +157,15 @@ ul li:hover {
     background-color: white;
     overflow-y: scroll;
     margin-bottom: 50px;
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: column; */
+}
 
+.list-header-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .standings-section h2 {
@@ -170,7 +174,13 @@ ul li:hover {
 
 .standings-selectors {
     width: 100%;
+    background-color: rgb(96, 116, 152);
 }
+
+.standings-selectors ul {
+    /* display: block;
+    width: 100%; */
+} 
 
 .standings-selectors li {
     font-size: 1.2em;
@@ -442,4 +452,12 @@ span.cart-quant-header {
     display: inline-block;
     justify-content: center;
     margin: 0 auto;
+}
+
+@media only screen and (max-width: 1200px) {
+
+
+
+
+
 }

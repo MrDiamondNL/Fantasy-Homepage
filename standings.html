@@ -7,7 +7,7 @@
     <script src="scripts.js"></script>
     <script src="gamescores.js"></script>
     <script src="standings.js"></script>
-    <title>Fantasy Book Team Page</title>
+    <title>FHB</title>
 </head>
 <body onload="getGameScores(), createLeagueTable()">
     <div class="game-listings" id="game-listings">
@@ -15,25 +15,25 @@
     <header class="page-header">
         <div class="banner-bar">      
             <img src="./images/Fantasy Hockey Book mini logo.png" alt="Fantasy Hockey Book Logo" class="mini-logo" onclick="loadHomePage()">      
-            <span class="title-span">Fantasy Hockey Book</span>
-            <ul class="navigation-links">                
-                <li onclick="loadNewsPage()">News</li>
+            <span class="title-span">FHB</span>
+            <ul class="navigation-links">
                 <li onclick="loadStandingsPage()">Standings</li>
                 <li onclick="loadFantasyPage()">Fantasy Team</li>
                 <li onclick="loadShopPage()">Shop</li>
             </ul>
         </div>
     </header>
-    <div class="main-section">        
+    <div class="main-section"> 
+        <div class="standings-selectors">
+            <ul class="standings-buttons">
+                <li onclick="createLeagueTable()">League</li>
+                <li onclick="createConferenceTable()">Conference</li>
+                <li onclick="createDivisionTable()">Division</li>
+                <li onclick="createWildCardTable()">Wildcard</li>
+            </ul>
+        </div>       
         <div class="standings-section">
-            <div class="standings-selectors">
-                <ul class="standings-buttons">
-                    <li onclick="createLeagueTable()">League</li>
-                    <li onclick="createConferenceTable()">Conference</li>
-                    <li onclick="createDivisionTable()">Division</li>
-                    <li onclick="createWildCardTable()">Wildcard</li>
-                </ul>
-            </div>
+            
             <div class="list-header-main"><h1 class="list-header">League Standings</h1>
             </div>     
             <div class="extra-list-header">
