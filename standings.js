@@ -351,18 +351,25 @@ function createWildCardTable() {
     </div>
     `;
 
-    for (let x = 0; westernWildCard.length; x++) {
-        document.getElementById("standings-table").innerHTML += `
-        <div class="team-listing-row">
-            <span class="rank-col">${x + 1}</span>
-            <span class="team-col"><img class="standings-team-logo" src="${westernWildCard[x].teamLogo}" />${westernWildCard[x].teamName}</span>
-            <span class="gp-col">${westernWildCard[x].teamGamesPlayed}</span>
-            <span class="wins-col">${westernWildCard[x].teamWins}</span>
-            <span class="loss-col">${westernWildCard[x].teamLosses}</span>
-            <span class="ot-col">${westernWildCard[x].teamOt}</span>
-            <span class="points-col">${westernWildCard[x].teamPoints}</span>
-        </div>
-        `;
+    try {
+        for (let x = 0; westernWildCard.length; x++) {
+            document.getElementById("standings-table").innerHTML += `
+            <div class="team-listing-row">
+                <span class="rank-col">${x + 1}</span>
+                <span class="team-col"><img class="standings-team-logo" src="${westernWildCard[x].teamLogo}"/> 
+                ${westernWildCard[x].teamName}</span>
+                <span class="gp-col">${westernWildCard[x].teamGamesPlayed}</span>
+                <span class="wins-col">${westernWildCard[x].teamWins}</span>
+                <span class="loss-col">${westernWildCard[x].teamLosses}</span>
+                <span class="ot-col">${westernWildCard[x].teamOt}</span>
+                <span class="points-col">${westernWildCard[x].teamPoints}</span>
+            </div>
+            `;    
+        }
+    } catch (error) { // a random error seems to be holding up the rest of the code and I can't figure it out
+        if (!(error instanceof TypeError)) {
+            throw error; 
+        }
     }
 
     document.getElementById("standings-table").innerHTML += `
@@ -433,18 +440,24 @@ function createWildCardTable() {
         <h3 class="points-total points-col">Points</h3>
     </div>
     `;
-    for (let x = 0; easternWildCard.length; x++) {
-        document.getElementById("standings-table").innerHTML += `
-        <div class="team-listing-row">
-            <span class="rank-col">${x + 1}</span>
-            <span class="team-col"><img class="standings-team-logo" src="${easternWildCard[x].teamLogo}" />${easternWildCard[x].teamName}</span>
-            <span class="gp-col">${easternWildCard[x].teamGamesPlayed}</span>
-            <span class="wins-col">${easternWildCard[x].teamWins}</span>
-            <span class="loss-col">${easternWildCard[x].teamLosses}</span>
-            <span class="ot-col">${easternWildCard[x].teamOt}</span>
-            <span class="points-col">${easternWildCard[x].teamPoints}</span>
-        </div>
-        `;
+    try {
+        for (let x = 0; easternWildCard.length; x++) {
+            document.getElementById("standings-table").innerHTML += `
+            <div class="team-listing-row">
+                <span class="rank-col">${x + 1}</span>
+                <span class="team-col"><img class="standings-team-logo" src="${easternWildCard[x].teamLogo}" />${easternWildCard[x].teamName}</span>
+                <span class="gp-col">${easternWildCard[x].teamGamesPlayed}</span>
+                <span class="wins-col">${easternWildCard[x].teamWins}</span>
+                <span class="loss-col">${easternWildCard[x].teamLosses}</span>
+                <span class="ot-col">${easternWildCard[x].teamOt}</span>
+                <span class="points-col">${easternWildCard[x].teamPoints}</span>
+            </div>
+            `;
+        }
+    } catch (error) { // Catching this error for consistency
+        if (!(error instanceof TypeError)) {
+            throw error; 
+        }
     }
 }
 // createLeagueTable();

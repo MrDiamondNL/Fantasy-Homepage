@@ -1,6 +1,7 @@
 function addToCartClicked() {
     let buttonClicked = event.target;
-    let itemAdded = buttonClicked.parentElement;
+    let itemAdded = buttonClicked.parentElement.parentElement;
+    console.log(itemAdded);
     let itemAddedTitle = itemAdded.getElementsByClassName('shop-item-image')[0].title;
     let itemAddedImage = itemAdded.getElementsByClassName('shop-item-image')[0].src;
     let itemAddedPrice = buttonClicked.value;
