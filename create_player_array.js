@@ -11,6 +11,9 @@ let playerLastName = "";
 let playerPosition = "";
 let playerCode = 0;
 
+const searchInput = document.querySelector(".player-search");
+const input = searchInput.querySelector("input");
+const resultBox = searchInput.querySelector(".result-box");
 
 async function getData(url) {
     const response = await fetch(url);
@@ -58,18 +61,36 @@ function appendToPlayerArray(firstName, lastName, playerPos, playerID) {
     playerList.push(newPlayer);
 }
 
-// async function testFunction(url) {
-//     currentRoster = await getData(url);
-//     for (let y = 0; y < currentRoster.forwards.length; y++) {
-//         playerFirstName = currentRoster.forwards[y].firstName.default;
-//         playerLastName = currentRoster.forwards[y].lastName.default;
-//         playerPosition = currentRoster.forwards[y].positionCode;
-//         playerCode = currentRoster.forwards[y].id;
-//         appendToPlayerArray(playerFirstName, playerLastName, playerPosition, playerCode);
-//         playerList.push(playerFirstName, playerLastName, playerPosition, playerCode)
-//     }
-//     console.log(playerList);
-// }
-
 addPlayerToArray();
 
+input.onkeyup = (e) => {
+    let userSearch = e.target.value;
+    let emptyArray = [];
+    if (userSearch) {
+        emptyArray = playerList.filter((data) => {
+            return data.toLocaleLowerCase().startsWith(userSearch.toLocaleLowerCase());
+        });
+        emptyArray = emptyArray.map((data) => {
+            return data = '<li>' + data + '</li>';
+        });
+        searchInput.classList.add("active");
+        showSuggestions(emptyArray);
+        let allList = resultBox.querySelectorAll("li");
+        for (let x = 0; x < allList.length; x++) {
+            allList[x].setAttribute("onclick", "select(this)");
+        }
+    } else {
+        searchInput.classList.remove("active");
+    }
+}
+
+function showSuggestions(list) {
+    let listData;
+    if(!list.length) {
+        userValue = inputBox.value;
+        listData = '<li>' + userValue + '</li>';
+    } else {
+        listData = list.join('');
+    }
+    resultBox.innerHTML = listData;
+}

@@ -71,38 +71,3 @@ function getRandomInteger(min, max) {
 }
 
 
-
-// async function getGameData() {
-//     const response = await fetch(url);
-//     const data = await response.json();
-//     let t = data.gameWeek[0].numberOfGames.valueOf();
-//     const y = JSON.parse(t);
-//     const z = parseInt(y);
-//     console.log(y);
-//     console.log(z);
-//     for (let x = 0; x < z; x++) {
-//         document.getElementById("game-listings").innerHTML += 
-//         "<div class=\"game-box\">" + 
-//             "<h3>Team 1</h3>" + 
-//             "<h3>Team 2</h3>" +
-//         "</div>";
-//         // console.log('true');        
-//     }    
-// }
-
-
-// console.log(games);
-
-// function createGameBoxList() {    
-//     // console.log(getGameData());
-//     // console.log(Math.floor(games));
-//     for (let x = 0; x < Math.floor(games); x++) {
-//         document.getElementById("game-listings").innerHTML += 
-//         "<div class=\"game-box\">" + 
-//             "<h3>Team 1</h3>" + 
-//             "<h3>Team 2</h3>" +
-//         "</div>";
-//         // console.log('true');        
-//     }    
-// }
-
