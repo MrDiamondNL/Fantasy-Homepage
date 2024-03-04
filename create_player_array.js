@@ -5,15 +5,15 @@ const teamAbbrevList = [
 let currentTeamFetch = "";
 let currentPlayerFetch = "";
 let urlTeamRosterFetch = `https://api-web.nhle.com/v1/roster/${currentTeamFetch}/current`;
-let urlPlayerStatFetch = `https://api-web.nhle.com/v1/player/${currentPlayerFetch}/landing`;
 let playerFirstName = "";
 let playerLastName = "";
 let playerPosition = "";
 let playerCode = 0;
+let playerStatList = [];
 
-const searchInput = document.querySelector(".player-search");
-const input = searchInput.querySelector("input");
-const resultBox = searchInput.querySelector(".result-box");
+// const searchInput = document.querySelector(".player-search");
+// const input = searchInput.querySelector("input");
+// const resultBox = searchInput.querySelector(".result-box");
 
 async function getData(url) {
     const response = await fetch(url);
@@ -63,34 +63,72 @@ function appendToPlayerArray(firstName, lastName, playerPos, playerID) {
 
 addPlayerToArray();
 
-input.onkeyup = (e) => {
-    let userSearch = e.target.value;
-    let emptyArray = [];
-    if (userSearch) {
-        emptyArray = playerList.filter((data) => {
-            return data.toLocaleLowerCase().startsWith(userSearch.toLocaleLowerCase());
-        });
-        emptyArray = emptyArray.map((data) => {
-            return data = '<li>' + data + '</li>';
-        });
-        searchInput.classList.add("active");
-        showSuggestions(emptyArray);
-        let allList = resultBox.querySelectorAll("li");
-        for (let x = 0; x < allList.length; x++) {
-            allList[x].setAttribute("onclick", "select(this)");
+// input.onkeyup = (e) => {
+//     let userSearch = e.target.value;
+//     let emptyArray = [];
+//     if (userSearch) {
+//         emptyArray = playerList.filter((data) => {
+//             return data.toLocaleLowerCase().startsWith(userSearch.toLocaleLowerCase());
+//         });
+//         emptyArray = emptyArray.map((data) => {
+//             return data = '<li>' + data + '</li>';
+//         });
+//         searchInput.classList.add("active");
+//         showSuggestions(emptyArray);
+//         let allList = resultBox.querySelectorAll("li");
+//         for (let x = 0; x < allList.length; x++) {
+//             allList[x].setAttribute("onclick", "select(this)");
+//         }
+//     } else {
+//         searchInput.classList.remove("active");
+//     }
+// }
+
+// function showSuggestions(list) {
+//     let listData;
+//     if(!list.length) {
+//         userValue = inputBox.value;
+//         listData = '<li>' + userValue + '</li>';
+//     } else {
+//         listData = list.join('');
+//     }
+//     resultBox.innerHTML = listData;
+// }
+
+function pullPlayerCode() {
+    let fullName = "";
+    let userSearch = document.getElementById("player-search").value;
+    for (let x = 0; x < playerList.length; x++) {
+        fullName = (playerList[x].firstName).concat(" ", playerList[x].lastName);
+        if (userSearch.toLowerCase() == fullName.toLowerCase()) {
+            return playerList[x].playerID;
         }
-    } else {
-        searchInput.classList.remove("active");
     }
 }
 
-function showSuggestions(list) {
-    let listData;
-    if(!list.length) {
-        userValue = inputBox.value;
-        listData = '<li>' + userValue + '</li>';
-    } else {
-        listData = list.join('');
-    }
-    resultBox.innerHTML = listData;
+async function pullPlayerStats() {
+    let data = pullPlayerCode();
+    currentPlayerFetch = data.toString();
+    let urlPlayerStatFetch = `https://api-web.nhle.com/v1/player/${currentPlayerFetch}/landing`;
+    let currentData = await getData(urlPlayerStatFetch);
+    playerStatList = currentData.featuredStats.regularSeason.subSeason;
+    console.log(playerStatList);
+    return playerStatList;
+}
+
+function newRosterCard() {
+    playerStatList = pullPlayerStats();
+    let x = document.getElementById("player-search").value;
+    document.getElementById("roster-section").innerHTML += `
+    <div class = "player-card">
+        <div class="player-score">
+            <h3 class="big-score">0pts</h3>
+        </div> 
+        <div class="player-details">
+            <h4 class="player-name"> </h4> 
+            <p class="player-stats">G, A, +/-, PIMS, PPP, SHP, BLKs</p>
+            </div>
+        "<div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
+    </div>
+    `;
 }
