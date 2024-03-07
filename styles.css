@@ -300,6 +300,12 @@ img.standings-team-logo {
     width: 50%;
 }
 
+img.player-portrait {
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+}
+
 .player-card {
     background-color: white;
     padding: 5px;
