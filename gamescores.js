@@ -1,5 +1,5 @@
-const urlLineScores = 'https://corsproxy.io/?' + encodeURIComponent('https://api-web.nhle.com/v1/score/now');
-const urlNumOfGames = 'https://corsproxy.io/?' + encodeURIComponent('https://api-web.nhle.com/v1/schedule/now');
+const urlLineScores = 'https://api-web.nhle.com/v1/score/now';
+const urlNumOfGames = 'https://api-web.nhle.com/v1/schedule/now';
 
 async function getGameScores() {
     const responseNumGames = await fetch(urlNumOfGames);

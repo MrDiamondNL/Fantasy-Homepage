@@ -133,7 +133,7 @@ async function newRosterCard() {
             <h4 class="player-name">${x} </h4> 
             <p class="player-stats">${playerStatList.goals}g, ${playerStatList.assists}a, ${playerStatList.plusMinus}, ${playerStatList.pim}pims, ${playerStatList.powerPlayPoints}ppp, ${playerStatList.shorthandedPoints}shp</p>
             </div>
-        "<div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
+        <div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
     </div>
     `;
 }
@@ -150,7 +150,7 @@ async function newWatchlistCard(playerName) {
             <h4 class="player-name">${x} </h4> 
             <p class="player-stats">${playerStatList.goals}g, ${playerStatList.assists}a, ${playerStatList.plusMinus}, ${playerStatList.pim}pims, ${playerStatList.powerPlayPoints}ppp, ${playerStatList.shorthandedPoints}shp</p>
             </div>
-        "<div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
+        <div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
     </div>
     `;
 }
