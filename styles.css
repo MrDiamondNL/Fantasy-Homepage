@@ -2,16 +2,21 @@
     box-sizing: border-box;
 }
 
+html {
+    /* height: 100%; */
+}
+
 body {
     background-image: url("./images/hockey\ rank\ .png");
     background-repeat: no-repeat;
-    background-size: 100vw, 100vh;
+    background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
+    margin: 0 auto;
+    min-height: 100vh;
 }
 
 header {
-    background-color: black;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(255, 255, 255, 0));
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -19,12 +24,18 @@ header {
     
 }
 
+.content-container {
+    width: 1050px;
+    max-width: 100%;
+    /* display: block; */
+    position: relative;
+    margin: 0 auto;
+}
+
 .banner-bar {
-    height: 100px;
     border: 0px;
-    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -53,11 +64,11 @@ ul.navigation-links {
 ul li {    
     display: flex;
     float: right;
-    width: 100px;
-    height: 100px;
+    /* width: 100px;
+    height: 100px; */
     align-items: center;
     justify-content: center;
-    padding: auto;
+    padding: 10px 20px;
     transition: background 0.5s;
     text-align: center;
 }
@@ -97,7 +108,7 @@ ul li:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     overflow-x: auto;
 }
 
@@ -147,11 +158,9 @@ ul li:hover {
     display: flex;    
     flex-direction: column;
     justify-content: center;
-    max-width: 60vw;
-    min-width: 50vw;
-    margin: auto;
-    max-height: 800px;
-    
+    margin: 0 auto;   
+    padding: 100px 0;
+    background-color: white;
 }
 
 .standings-section {
@@ -266,7 +275,6 @@ img.standings-team-logo {
     flex-wrap: wrap;
     flex-direction: row;
     background-color: rgb(96, 116, 152);
-    width: 1000px;
 }
 
 .player-section {
@@ -403,6 +411,8 @@ img.player-portrait {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 20px;
 }
 
 .shop-item {
@@ -410,7 +420,8 @@ img.player-portrait {
     width: 300px;
     height: 400px;
     background-color: white;
-    /* margin: 50px 100px; */
+    border: 1px solid black;
+    overflow: hidden;
 }
 
 .shop-item img {
@@ -436,7 +447,7 @@ img.player-portrait {
 .cart-section {
     background-color: white;
     width: 300px;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     position: absolute;
     top: 250px;
@@ -489,9 +500,10 @@ span.cart-quant-header {
 .footer-main {
     background-color: lightgray;
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;    
     text-align: center;
+    padding: 10px
 }
 
 .footer-main img {
