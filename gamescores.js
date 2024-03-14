@@ -28,6 +28,11 @@ async function getGameScores() {
             awayScore = 0;
         }
 
+        if (numberOfGames < 8) {
+            let gameTracker = document.getElementById("game-listings");
+            gameTracker.style.justifyContent = "center";
+        }
+
         document.getElementById("game-listings").innerHTML += `
         <div class="game-box">
             <div class="home-row">

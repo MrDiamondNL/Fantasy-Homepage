@@ -9,13 +9,13 @@
     <script src="standings.js"></script>
     <title>FHB</title>
 </head>
-<body onload="getGameScores(), createLeagueTable()">
+<body onload="getGameScores(), createLeagueTable(document.querySelector('.standings-buttons li:first-child'))">
     <div class="game-listings" id="game-listings">
     </div>
     <header class="page-header">
         <div class="banner-bar content-container">      
-            <img src="./images/Fantasy Hockey Book mini logo.png" alt="Fantasy Hockey Book Logo" class="mini-logo" onclick="loadHomePage()">      
-            <span class="title-span">FHB</span>
+            <img src="./images/Fantasy Hockey Transparent Background.png" alt="Fantasy Hockey Book Logo" class="mini-logo" onclick="loadHomePage()">      
+            <!-- <span class="title-span">FHB</span> -->
             <ul class="navigation-links">
                 <li onclick="loadStandingsPage()">Standings</li>
                 <li onclick="loadFantasyPage()">Fantasy Team</li>
@@ -26,10 +26,10 @@
     <div class="main-section content-container"> 
         <div class="standings-selectors">
             <ul class="standings-buttons">
-                <li onclick="createLeagueTable()">League</li>
-                <li onclick="createConferenceTable()">Conference</li>
-                <li onclick="createDivisionTable()">Division</li>
-                <li onclick="createWildCardTable()">Wildcard</li>
+                <li onclick="createLeagueTable(this)">League</li>
+                <li onclick="createConferenceTable(this)">Conference</li>
+                <li onclick="createDivisionTable(this)">Division</li>
+                <li onclick="createWildCardTable(this)">Wildcard</li>
             </ul>
         </div>       
         <div class="standings-section">

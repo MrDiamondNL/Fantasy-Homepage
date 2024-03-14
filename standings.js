@@ -47,10 +47,17 @@ async function createStandingsArray() {
 }
 
 
-async function createLeagueTable() {
+async function createLeagueTable(el) {
     if (standingsArray.length == 0) {
         await createStandingsArray();
-    }    
+    }   
+    
+    let abs = document.querySelectorAll(".active-table");
+    abs.forEach(element=>element.classList.remove("active-table"));
+
+    let activeTag = el;
+    activeTag.classList.add("active-table");
+
     document.getElementsByClassName("list-header")[0].innerHTML = "League Standings";
     document.getElementById("standings-table").innerHTML = "";
     document.getElementsByClassName("extra-list-header")[0].innerHTML = "";
@@ -129,10 +136,17 @@ function createWildCardArray() {
     }
 }
 
-function createConferenceTable() {
-    if (westernArray.length == 0) {
+function createConferenceTable(el) {
+    if (westernArray.length === 0) {
         createConferenceArray();
     }
+    console.log(westernArray.length);
+    let abs = document.querySelectorAll(".active-table");
+    abs.forEach(element=>element.classList.remove("active-table"));
+
+    let activeTag = el;
+    activeTag.classList.add("active-table");
+
     document.getElementById("standings-table").innerHTML = "";
     document.getElementsByClassName("list-header")[0].innerHTML = "Conference Standings";
     document.getElementsByClassName("extra-list-header")[0].innerHTML = `
@@ -180,13 +194,19 @@ function createConferenceTable() {
     }
 }
 
-function createDivisionTable() {
+function createDivisionTable(el) {
     if (atlanticArray.length == 0) {
         createDivisionArray();
     }
+
+    let abs = document.querySelectorAll(".active-table");
+    abs.forEach(element=>element.classList.remove("active-table"));
+
+    let activeTag = el;
+    activeTag.classList.add("active-table");
+
     document.getElementById("standings-table").innerHTML = "";
     document.getElementsByClassName("list-header")[0].innerHTML = "Division Standings";
-    createConferenceArray();
     document.getElementsByClassName("extra-list-header")[0].innerHTML = `
         <h2 class="conference-title">Atlantic</h2>`;
     for (let x = 0; x < atlanticArray.length; x++) {
@@ -285,10 +305,16 @@ function createDivisionTable() {
     }
 }
 
-function createWildCardTable() {
+function createWildCardTable(el) {
     if (easternWildCard.length == 0) {
         createWildCardArray();
     }
+
+    let abs = document.querySelectorAll(".active-table");
+    abs.forEach(element=>element.classList.remove("active-table"));
+
+    let activeTag = el;
+    activeTag.classList.add("active-table");
     
     document.getElementById("standings-table").innerHTML = "";
     document.getElementsByClassName("list-header")[0].innerHTML = "WildCard Standings";
