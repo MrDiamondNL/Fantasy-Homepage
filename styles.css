@@ -168,39 +168,77 @@ ul.navigation-links li:hover {
 }
 
 #index_main_section {
-    flex-direction: row;
     background-color: transparent;
-    font-size: 2.0em;
+    flex-direction: row;
+    font-size: 1.6em;
+
 }
 
 .home-left-side, .home-right-side {
-    width: 500px;
-    height: 500px;
     display: flex;
     flex-direction: column;
     margin-top: 50px;
 }
 
 .fantasy-roster-link {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
     margin: 25px;
+    padding: 20px;
+    background: #4758D6;
+    color: #fff;
+    border-radius: 0;
+    -webkit-box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: 900;
+    transition: .2s all ease-in-out;
 }
 
 .nhl-standings-link {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
     margin: 25px;
+    padding: 20px;
+    background: #4758D6;
+    color: #fff;
+    border-radius: 0;
+    -webkit-box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: 900;
+    transition: .2s all ease-in-out;
 }
 
 .shop-link {
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    text-align: center;
     margin: 25px;
+    padding: 20px;
+    background: #4758D6;
+    color: #fff;
+    border-radius: 0;
+    -webkit-box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
+    text-transform: uppercase;
+    line-height: 1.5;
+    font-weight: 900;
+    transition: .2s all ease-in-out;
 }
 
 .fantasy-roster-link:hover, .nhl-standings-link:hover, .shop-link:hover {
     cursor: pointer;
+    box-shadow: 4px 1px 10px -3px rgba(0,0,0,0.75);
+    transform: scale(1.05);
 }
 
 .standings-section {
@@ -589,6 +627,10 @@ span.cart-quant-header {
     display: inline-block;
     justify-content: center;
     margin: 0 auto;
+}
+
+.footer-main img:hover {
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1000px) {

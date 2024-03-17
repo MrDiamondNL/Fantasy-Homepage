@@ -166,6 +166,6 @@ function loadPage() {
     let content = localStorage.getItem("customPlayerList");
     console.log(content);
     if (content) {
-        // document.getElementById("player-section").innerHTML = content;
+        document.getElementById("player-section").innerHTML = content;
     }
 }
