@@ -58,7 +58,6 @@ async function addPlayerToArray() {
             appendToPlayerArray(playerFirstName, playerLastName, playerPosition, playerCode, playerPortrait);
         }
     }
-    console.log(playerList);
 }
 
 function appendToPlayerArray(firstName, lastName, playerPos, playerID, portrait) {
@@ -136,6 +135,7 @@ async function newRosterCard() {
         <div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
     </div>
     `;
+    savePage();
 }
 
 async function newWatchlistCard(playerName) {
@@ -153,4 +153,19 @@ async function newWatchlistCard(playerName) {
         <div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
     </div>
     `;
+    savePage();
+}
+
+function savePage() {
+    let content = document.getElementById("player-section").innerHTML;
+    localStorage.setItem("customPlayerList", content);
+    console.log(localStorage.getItem("customPlayerList"));
+}
+
+function loadPage() {
+    let content = localStorage.getItem("customPlayerList");
+    console.log(content);
+    if (content) {
+        // document.getElementById("player-section").innerHTML = content;
+    }
 }

@@ -52,6 +52,10 @@ header {
     float: left;
 }
 
+img.mini-logo:hover {
+    cursor: pointer;
+}
+
 ul.navigation-links {
     list-style-type: none;
     display: flex;
@@ -153,11 +157,6 @@ ul.navigation-links li:hover {
     display: inline-block;
 }
 
-/* .top-red-line {
-    height: 5px;
-    color: red;
-    background-color: red;
-} */
 
 .main-section {
     display: flex;    
@@ -166,6 +165,42 @@ ul.navigation-links li:hover {
     margin: 0 auto;   
     padding: 50px 20px;
     background-color: white;
+}
+
+#index_main_section {
+    flex-direction: row;
+    background-color: transparent;
+    font-size: 2.0em;
+}
+
+.home-left-side, .home-right-side {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+}
+
+.fantasy-roster-link {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    margin: 25px;
+}
+
+.nhl-standings-link {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    margin: 25px;
+}
+
+.shop-link {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 5px;
+    margin: 25px;
+}
+
+.fantasy-roster-link:hover, .nhl-standings-link:hover, .shop-link:hover {
+    cursor: pointer;
 }
 
 .standings-section {
@@ -303,6 +338,7 @@ img.standings-team-logo {
     flex-wrap: wrap;
     flex-direction: row;
     background-color: rgb(96, 116, 152);
+    padding-top: 20px;
 }
 
 .player-section {
@@ -312,6 +348,7 @@ img.standings-team-logo {
     margin: auto;
     max-height: 800px;
     width: 100%;
+    background-color: white;
 }
 
 .roster-section {
@@ -349,6 +386,7 @@ img.player-portrait {
     border-radius: 5px;
     height: 60px;
     display: flex;
+    border: 1px solid red;
 }
 
 .player-card:nth-child(even) {
@@ -396,7 +434,7 @@ img.player-portrait {
     background-color: #888;
     padding: 5px;
     margin: 5px;
-    height: 60px;
+    height: 50px;
     display: flex;
     width: 100%;
     flex-grow: 2;

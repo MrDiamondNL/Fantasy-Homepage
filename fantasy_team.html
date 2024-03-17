@@ -9,7 +9,7 @@
     <script src="create_player_array.js"></script>
     <title>Fantasy Book Team Page</title>
 </head>
-<body onload="getGameScores()">
+<body onload="getGameScores(), loadPage()">
     <div class="game-listings" id="game-listings">  
     </div>
     <!-- <hr class="top-red-line"/> -->
@@ -31,8 +31,11 @@
             <button class="button-1" name="roster-button" type="button" onclick="newRosterCard()">Roster</button>
             <button class="button-1" name="watchlist-button" type="button" onclick="newWatchlistCard()">Watchlist</button>
         </div>
-        <div class="player-section">
+        <div class="player-section" id="player-section">
             <div class="roster-section" id="roster-section">
+                <div class="list-header-container">
+                    <h3 class="list-title">Roster Players</h3>
+                </div>
                 <div class="player-card">
                     <div class="player-score">
                         <h3 class="big-score">0pts</h3>
@@ -45,6 +48,9 @@
                 </div>
             </div>
             <div class="custom-section" id="custom-section">            
+                <div class="list-header-container">
+                    <h3 class="list-title">Watchlist Players</h3>
+                </div>
                 <div class="player-card">
                     <div class="player-score">
                         <h3 class="big-score">0pts</h3>
