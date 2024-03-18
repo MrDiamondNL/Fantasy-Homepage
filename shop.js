@@ -84,3 +84,7 @@ function doTheMath() {
     // console.log(cartRows);
 }
 
+function showCart() {
+    let el = document.getElementById("cart-section");
+    el.style.display = "block";
+}

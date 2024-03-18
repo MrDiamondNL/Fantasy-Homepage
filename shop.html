@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/415bbafa7b.js" crossorigin="anonymous"></script>
 </head>
 <body onload="getGameScores()">
     <div class="game-listings" id="game-listings">
@@ -27,12 +28,28 @@
                 <li onclick="loadStandingsPage()">Standings</li>
                 <li onclick="loadFantasyPage()">Fantasy Team</li>
                 <li onclick="loadShopPage()">Shop</li>
+                <li><div class="cart-button" onclick="showCart()"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <div class="cart-section" id="cart-section">
+                        <h2 class="cart-header">Cart</h2>
+                        <div class="cart-row">
+                            <span class="cart-item-header">Item</span>
+                            <span class="cart-quant-header">#</span>
+                            <span class="cart-price-header">Price</span>
+                            
+                        </div>   
+                        <div class="cart-contents">
+                            
+                        </div>
+                        <div class="cart-total">
+                            <span class="cart-total-text">Total: </span><span class="cart-total-display"></span>
+                        </div>
+                    </div> 
+                </li>
             </ul>
         </div>
     </header>
     <div class="main-section content-container">        
-        <div class="shop-section">
-            
+        <div class="shop-section">            
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Jersey 1.jpg" title="BA Jersey">
                     <div class="shop-description"><span class="price">$99.99</span>
@@ -52,8 +69,6 @@
                         <span class="shop-item-desc">OH Jersey</span>
                     </div>
                 </div>
-                       
-            
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Jersey 3.jpg" title="21 Jersey">
                     <div class="shop-description">
@@ -74,8 +89,6 @@
                         <span class="shop-item-desc">Grey Toque</span>
                     </div>  
                 </div>
-                       
-            
                 <div class="shop-item">
                     <img class="shop-item-image" src="./images/Toque 2.jpg" title="Blue Toque">
                     <div class="shop-description">
@@ -96,11 +109,12 @@
                         <span class="shop-item-desc">Hockey Mug</span>
                     </div> 
                 </div>
-                       
         </div>
-        
+        <!-- <div class="cart-button-container">
+            <div class="cart-button" onclick="showCart()"><i class="fa-solid fa-cart-shopping"></i></div>
+        </div> -->
     </div>
-    <div class="cart-section" id="cart-section">
+    <!-- <div class="cart-section" id="cart-section">
         <h2 class="cart-header">Cart</h2>
         <div class="cart-row">
             <span class="cart-item-header">Item</span>
@@ -114,7 +128,7 @@
         <div class="cart-total">
             <span class="cart-total-text">Total: </span><span class="cart-total-display"></span>
         </div>
-    </div> 
+    </div>  -->
     <footer class="footer-main">
         <img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/github.svg' alt='github' height='40' onclick="loadGitHubPage()"> 
         <img src='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg' alt='facebook' height='40' onclick="loadFacebookPage()">

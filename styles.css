@@ -566,12 +566,15 @@ span.shop-item-desc {
 
 .cart-section {
     background-color: white;
-    width: 300px;
     display: none;
     flex-wrap: wrap;
     position: absolute;
-    top: 250px;
     right: 0;
+    top: 100px;
+    z-index: 1;
+    color: black;
+    font-weight: 400;
+    font-size: 0.8em;
 }
 
 .cart-section h2 {
@@ -616,6 +619,23 @@ span.cart-quant-header {
 /* .cart-row {
     width: 100%;
 } */
+
+.cart-button-container {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.cart-button {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.cart-button:hover {
+    cursor: pointer;
+}
 
 .footer-main {
     background-color: lightgray;
