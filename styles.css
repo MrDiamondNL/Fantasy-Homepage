@@ -10,7 +10,7 @@ body {
     background-image: url("./images/hockey\ rank\ .png");
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin: 0 auto;
     min-height: 100vh;
@@ -123,7 +123,7 @@ ul.navigation-links li:hover {
 
 .game-box {
     background-color: white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     display: flex;
     flex-wrap: wrap;
     height: 100px;
@@ -181,6 +181,7 @@ ul.navigation-links li:hover {
 }
 
 .fantasy-roster-link {
+    font-family: "Titillium Web", Arial, Helvetica, sans-serif;
     height: 100%;
     display: flex;
     align-items: center;
@@ -195,7 +196,7 @@ ul.navigation-links li:hover {
     box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
     text-transform: uppercase;
     line-height: 1.5;
-    font-weight: 900;
+    font-weight: 700;
     transition: .2s all ease-in-out;
 }
 
@@ -213,7 +214,7 @@ ul.navigation-links li:hover {
     box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
     text-transform: uppercase;
     line-height: 1.5;
-    font-weight: 900;
+    font-weight: 700;
     transition: .2s all ease-in-out;
 }
 
@@ -231,7 +232,7 @@ ul.navigation-links li:hover {
     box-shadow: 4px 1px 5px -3px rgba(0,0,0,0.75);
     text-transform: uppercase;
     line-height: 1.5;
-    font-weight: 900;
+    font-weight: 700;
     transition: .2s all ease-in-out;
 }
 
@@ -314,10 +315,6 @@ h1.list-header {
     cursor: pointer;
  }
 
- .active-table {
-    
- }
-
 .list-header {    
     min-width: 100%;
 }
@@ -375,7 +372,7 @@ img.standings-team-logo {
 #fantasy-main-section {
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: rgb(96, 116, 152);
+    /* background-color: rgb(96, 116, 152); */
     padding-top: 20px;
 }
 
@@ -392,10 +389,8 @@ img.standings-team-logo {
 .roster-section {
     /* background-color: rgb(96, 116, 152); */
     flex-grow: 1;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 800px;
     overflow: auto;
     width: 50%;
 }
@@ -403,26 +398,24 @@ img.standings-team-logo {
 .custom-section {
     /* background-color: rgb(96, 116, 152); */
     flex-grow: 1;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    height: 800px;
     overflow: auto;
     width: 50%;
 }
 
 img.player-portrait {
-    height: 50px;
-    width: 50px;
-    margin-right: 5px;
+    height: auto;
+    position: relative;
+    width: 100%;
+    display: block;
+    border: 1px solid gray;
 }
 
 .player-card {
     background-color: white;
-    padding: 5px;
+    padding: 10px 15px;
     margin: 5px;
-    border-radius: 5px;
-    height: 60px;
     display: flex;
     border: 1px solid red;
 }
@@ -434,7 +427,9 @@ img.player-portrait {
 .player-score {
     width: 15%;
     margin: 2px;
+    margin-right: 10px;
     flex-grow: 1;
+    position: relative;
 }
 
 .player-details {
@@ -443,8 +438,14 @@ img.player-portrait {
     flex-grow: 1;
 }
 
+.player-details p {
+    margin: 0;
+    margin-top: 10px;
+}
+
 .player-name {
     margin: 2px;
+    text-transform: capitalize;
 }
 
 .delete-card {
@@ -455,10 +456,10 @@ img.player-portrait {
 }
 
 .button-del {
+    display: flex;
     align-items: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
+    justify-content: center;
+    padding: 4px 5px 3px;
     font-size: 1.4rem;
     font-weight: bolder;
     color: red;
@@ -468,11 +469,13 @@ img.player-portrait {
     transition: background 0.2s ease,color 0.2s ease,box-shadow 0.2s ease;
 }
 
+.button-del:hover {
+    background-color: rgba(255, 255, 255, 0.37);
+}
+
 .player-search {
     background-color: #888;
-    padding: 5px;
-    margin: 5px;
-    height: 50px;
+    padding: 15px;
     display: flex;
     width: 100%;
     flex-grow: 2;
@@ -495,17 +498,17 @@ img.player-portrait {
     border: none;
     padding: 0 20px;
     margin: 0px 5px;
-    border-radius: 7px;
     font-weight: 400;
     font-size: 16px;
-    background: #fff;
-    color: #696969;
+    background: #4758D6;
+    color: white;
     box-shadow: 0 4px 14px 0 rgb(0 0 0 / 10%);
     transition: background 0.2s ease,color 0.2s ease, box-shadow 0.2s ease;
+    text-transform: uppercase;
 }
 
-.button-1:hover, .button-del:hover {
-    background: rgba(255, 255, 255, 0.537);
+.button-1:hover {
+    background: rgb(76, 91, 251);
     box-shadow: 0 6px 20px rgb(93 93 93 / 23%);
 }
 

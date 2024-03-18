@@ -130,9 +130,9 @@ async function newRosterCard() {
         </div> 
         <div class="player-details">
             <h4 class="player-name">${x} </h4> 
-            <p class="player-stats">${playerStatList.goals}g, ${playerStatList.assists}a, ${playerStatList.plusMinus}, ${playerStatList.pim}pims, ${playerStatList.powerPlayPoints}ppp, ${playerStatList.shorthandedPoints}shp</p>
+            <p class="player-stats">${playerStatList.goals} G, ${playerStatList.assists} A, ${playerStatList.plusMinus}, ${playerStatList.pim} PIMS, ${playerStatList.powerPlayPoints} PPP, ${playerStatList.shorthandedPoints} SHP</p>
             </div>
-        <div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
+        <div class= "delete-card"><div class = "button-del" name ="delete-button" onclick = "return this.parentNode.parentNode.remove();"><i class="fa-solid fa-xmark"></i></div></div>
     </div>
     `;
     savePage();
@@ -148,9 +148,9 @@ async function newWatchlistCard(playerName) {
         </div> 
         <div class="player-details">
             <h4 class="player-name">${x} </h4> 
-            <p class="player-stats">${playerStatList.goals}g, ${playerStatList.assists}a, ${playerStatList.plusMinus}, ${playerStatList.pim}pims, ${playerStatList.powerPlayPoints}ppp, ${playerStatList.shorthandedPoints}shp</p>
+            <p class="player-stats">${playerStatList.goals} G, ${playerStatList.assists} A, ${playerStatList.plusMinus}, ${playerStatList.pim} PIMS, ${playerStatList.powerPlayPoints} PPP, ${playerStatList.shorthandedPoints} SHP</p>
             </div>
-        <div class= "delete-card"><button class = "button-del" name ="delete-button" type ="button" onclick = "return this.parentNode.parentNode.remove();">X</button></div>
+        <div class= "delete-card"><div class = "button-del" name ="delete-button" onclick = "return this.parentNode.parentNode.remove();"><i class="fa-solid fa-xmark"></i></div></div>
     </div>
     `;
     savePage();
