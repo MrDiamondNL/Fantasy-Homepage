@@ -26,7 +26,7 @@ function AddToCart(image, price, title) {
             <span class="cart-item-title">${title}</span>
             <input class="cart-item-quantity" title="${title}" type="number" value="1" min="1">
             <span class="cart-item-price">${price}</span>
-            <div class="button-del" id="delete-button" ><i class="fa-solid fa-xmark"></i></div>            
+            <div class="button-del" id="delete-button" onclick="delShopItem()"><i class="fa-solid fa-xmark"></i></div>            
         `;
     
     cartRow.innerHTML = cartRowContents;
@@ -86,8 +86,10 @@ function doTheMath() {
 }
 
 function toggleCart() {
+    // e.stopPropagation();
     let el = document.getElementById("cart-section");
-    el.style.display = (el.style.display == "block") ? "none":"block";
+    console.log(el.style.display);
+    el.style.display = (el.style.display != "block") ? "block":"none";
     // if (el.style.display == "block") {
     //     el.style.display = "none";
     // } else {

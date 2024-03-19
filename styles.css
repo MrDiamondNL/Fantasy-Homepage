@@ -484,14 +484,12 @@ img.player-portrait {
 
 .search-bar {
     height: 40px;
-    /* margin: 5px; */
     width: 250px;
     border-radius: 5px;
 }
 
 .button-1 {
     height: 40px;
-    /* width: 70px; */
     display: inline-block;
     outline: 0;
     cursor: pointer;
@@ -514,7 +512,6 @@ img.player-portrait {
 
 .shop-section {
     display: flex;
-    /* max-width: 1200px; */
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -523,7 +520,6 @@ img.player-portrait {
 }
 
 .shop-item {
-    /* display: flex; */
     width: 300px;
     height: 400px;
     background-color: white;
@@ -540,7 +536,6 @@ img.player-portrait {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding-top: 10px; */
 }
 
 .shop-desc-container {
@@ -548,21 +543,12 @@ img.player-portrait {
     width: 100%;
     justify-content: center;
     align-content: center;
-    /* padding: 30px auto; */
 }
 
 span.shop-item-desc {
     font-size: 1.2em;
     padding-top: 10px;
 }
-
-/* .shop-description span.price {
-    
-} */
-
-/* .shop-item span {
-
-} */
 
 .cart-section {
     background-color: white;
@@ -589,13 +575,10 @@ span.shop-item-desc {
     margin-bottom: 15px; 
 }
 
-
-
 .cart-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* font-weight: bold; */
     margin-bottom: 10px;
     padding-right: 15px;
 }
