@@ -575,6 +575,20 @@ span.shop-item-desc {
     margin-bottom: 15px; 
 }
 
+.cart-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-header-container .fa-xmark {
+    font-size: 35px;
+}
+
+.cart-header-container .fa-xmark:hover {
+    cursor: pointer;
+}
+
 .cart-row {
     display: flex;
     align-items: center;
@@ -583,7 +597,7 @@ span.shop-item-desc {
     padding-right: 15px;
 }
 
-.cart-row:nth-child(odd) {
+.cart-contents .cart-row:nth-child(odd) {
     background-color: lightgray;
 }
 

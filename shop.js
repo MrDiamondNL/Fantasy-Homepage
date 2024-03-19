@@ -1,19 +1,19 @@
 function addToCartClicked() {
     let buttonClicked = event.target;
     let itemAdded = buttonClicked.parentElement.parentElement;
-    console.log(itemAdded);
     let itemAddedTitle = itemAdded.getElementsByClassName('shop-item-image')[0].title;
     let itemAddedImage = itemAdded.getElementsByClassName('shop-item-image')[0].src;
     let itemAddedPrice = buttonClicked.value;
     let x = checkCartContents(itemAddedTitle);
     if (x == true) {
+        document.getElementById("initial-nothing").style.display = "none";
         updateCartQuantity(itemAddedTitle);
         doTheMath();
     } 
     else {
+        document.getElementById("initial-nothing").style.display = "none";
         AddToCart(itemAddedImage, itemAddedPrice, itemAddedTitle);
         doTheMath();        
-        // console.log(total);
     }
 }
 
@@ -26,15 +26,12 @@ function AddToCart(image, price, title) {
             <span class="cart-item-title">${title}</span>
             <input class="cart-item-quantity" title="${title}" type="number" value="1" min="1">
             <span class="cart-item-price">${price}</span>
-            <div class="button-del" id="delete-button" onclick="delShopItem()"><i class="fa-solid fa-xmark"></i></div>            
+            <i class="fa-solid fa-xmark button-del" onclick="delShopItem(event)"></i>            
         `;
     
     cartRow.innerHTML = cartRowContents;
-    let deleteButton = cartRow.getElementsByClassName('button-del')[0];
-    deleteButton.addEventListener('click', delShopItem);
     let quantity = cartRow.getElementsByClassName('cart-item-quantity')[0].addEventListener('change', doTheMath);
-    cartContents.append(cartRow);    
-    console.log(deleteButton);
+    cartContents.append(cartRow);
     
 }
 
@@ -60,7 +57,8 @@ function updateCartQuantity(itemAdded) {
     }
 }
 
-function delShopItem() {
+function delShopItem(event) {
+    event.stopPropagation();
     let buttonClicked = event.target;
     buttonClicked.parentNode.remove();
     doTheMath();
@@ -82,13 +80,10 @@ function doTheMath() {
     }
     total = total.toFixed(2);
     document.getElementsByClassName('cart-total-display')[0].innerText = " $" + total;
-    // console.log(cartRows);
 }
 
 function toggleCart() {
-    // e.stopPropagation();
     let el = document.getElementById("cart-section");
-    console.log(el.style.display);
     el.style.display = (el.style.display != "block") ? "block":"none";
     // if (el.style.display == "block") {
     //     el.style.display = "none";

@@ -27,10 +27,12 @@
                 <li onclick="loadStandingsPage()">Standings</li>
                 <li onclick="loadFantasyPage()">Fantasy Team</li>
                 <li onclick="loadShopPage()">Shop</li>
-                <li><div class="cart-button" onclick="toggleCart()"><i class="fa-solid fa-cart-shopping" onclick="toggleCart()"></i></div>
+                <li><div class="cart-button" onclick="toggleCart()"><i class="fa-solid fa-cart-shopping"></i></div>
                     <div class="cart-section" id="cart-section">
-                        <h2 class="cart-header">Cart</h2>
-                        <!-- <i class="fa-solid fa-xmark"></i> -->
+                        <div class="cart-header-container">
+                            <h2 class="cart-header">Cart</h2>
+                            <i class="fa-solid fa-xmark" onclick="toggleCart()"></i>
+                        </div>                        
                         <div class="cart-row">
                             <span class="cart-item-header">Item</span>
                             <span class="cart-quant-header">#</span>
@@ -38,10 +40,10 @@
                             
                         </div>   
                         <div class="cart-contents">
-                            
+                            <p id="initial-nothing">No Items Added</p>
                         </div>
                         <div class="cart-total">
-                            <span class="cart-total-text">Total: &nbsp;</span><span class="cart-total-display"></span>
+                            <span class="cart-total-text">Total: &nbsp;</span><span class="cart-total-display">$0.00</span>
                         </div>
                     </div> 
                 </li>
