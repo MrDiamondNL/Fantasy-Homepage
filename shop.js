@@ -81,11 +81,28 @@ function doTheMath() {
         total = total + totalToAdd;
     }
     total = total.toFixed(2);
-    document.getElementsByClassName('cart-total-display')[0].innerText = "\$ " + total;
+    document.getElementsByClassName('cart-total-display')[0].innerText = " $" + total;
     // console.log(cartRows);
 }
 
-function showCart() {
+function toggleCart() {
     let el = document.getElementById("cart-section");
-    el.style.display = "block";
+    el.style.display = (el.style.display == "block") ? "none":"block";
+    // if (el.style.display == "block") {
+    //     el.style.display = "none";
+    // } else {
+    //     el.style.display = "block";
+    // }
 }
+
+// const onClickOutside = (element,callback) => {
+//     document.addEventListener("click",e => {
+//         if (!document.getElementById(element).contains(e.target)) {
+//             callback();
+//         }
+//     })
+// }
+
+// onClickOutside("#cart-section",() => {
+//     document.getElementById("cart-section").style.display = "none";
+// })
