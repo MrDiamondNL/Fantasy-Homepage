@@ -25,8 +25,8 @@ function AddToCart(image, price, title) {
             <img class="cart-item-img" src="${image}" alt="">
             <span class="cart-item-title">${title}</span>
             <input class="cart-item-quantity" title="${title}" type="number" value="1" min="1">
-            <button class="button-del" id="delete-button" type="button">X</button>
             <span class="cart-item-price">${price}</span>
+            <div class="button-del" id="delete-button" ><i class="fa-solid fa-xmark"></i></div>            
         `;
     
     cartRow.innerHTML = cartRowContents;
@@ -80,6 +80,7 @@ function doTheMath() {
         totalToAdd = itemPrice * itemAmount;
         total = total + totalToAdd;
     }
+    total = total.toFixed(2);
     document.getElementsByClassName('cart-total-display')[0].innerText = "\$ " + total;
     // console.log(cartRows);
 }
