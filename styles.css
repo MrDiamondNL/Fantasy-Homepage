@@ -2,14 +2,11 @@
     box-sizing: border-box;
 }
 
-html {
-    /* height: 100%; */
-}
-
 body {
-    background-image: url("./images/hockey\ rank\ .png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background: url("./images/hockey\ rank\ .png") no-repeat left top, linear-gradient(rgb(16, 16, 21), rgb(25, 25, 36));
+    background-size: 200%;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
     margin: 0 auto;
@@ -28,7 +25,6 @@ header {
 .content-container {
     width: 1050px;
     max-width: 100%;
-    /* display: block; */
     position: relative;
     margin: 0 auto;
 }
@@ -72,8 +68,6 @@ ul.navigation-links li {
 ul li {    
     display: flex;
     float: right;
-    /* width: 100px;
-    height: 100px; */
     align-items: center;
     justify-content: center;
     padding: 10px 20px;
@@ -86,44 +80,21 @@ ul.navigation-links li:hover {
     background-color: rgb(96, 116, 152);
 }
 
-
-/* ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-    overflow: scroll;
-    scrollbar-width: thin;
-}
-  
-  ::-webkit-scrollbar-track {
-    background: red; 
-}
-   
-  ::-webkit-scrollbar-thumb {
-    background: #888;
-    height: 5px;
-    width: 5px;
+ul.navigation-links li.hamburger-menu {
     display: none;
 }
-
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-    display: block;
-} */
 
 .game-listings {
     height: 150px;
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(0, 0, 0, 1));
-    /* background-color: rgb(96, 116, 152); */
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* justify-content: center; */
     overflow-x: auto;
 }
 
 .game-box {
     background-color: white;
-    /* border-radius: 10px; */
     display: flex;
     flex-wrap: wrap;
     height: 100px;
@@ -164,7 +135,7 @@ ul.navigation-links li:hover {
     justify-content: center;
     margin: 0 auto;   
     padding: 50px 20px;
-    background-color: white;
+    background-color: #FAF9F6;
 }
 
 #index_main_section {
@@ -244,10 +215,8 @@ ul.navigation-links li:hover {
 
 .standings-section {
     background-color: white;
-    /* overflow-y: scroll; */
     margin-bottom: 50px;
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     border: solid 1px red;
 }
@@ -273,7 +242,6 @@ h1.list-header {
 .standings-selectors ul {
     height: 75px;
     display: flex;
-    /* justify-content: center; */
     margin: 0;
     padding: 0;
 } 
@@ -299,7 +267,7 @@ h1.list-header {
 .standings-selectors li::after {
     content: "";
     height: 4px;
-    background: white;
+    background: #FAF9F6;
     position: absolute;
     display: block;
     bottom: 20px;
@@ -358,8 +326,7 @@ h3.rank-number.rank-col {
 span.rank-col, span.team-col, span.gp-col, span.wins-col, span.loss-col, span.ot-col, span.points-col {
     display: flex;
     font-size: 1.2em;
-    min-width: 10%;
-    height: 50px;    
+    min-width: 10%;  
     align-items: center;    
 }
 
@@ -372,7 +339,6 @@ img.standings-team-logo {
 #fantasy-main-section {
     flex-wrap: wrap;
     flex-direction: row;
-    /* background-color: rgb(96, 116, 152); */
     padding-top: 20px;
 }
 
@@ -387,7 +353,6 @@ img.standings-team-logo {
 }
 
 .roster-section {
-    /* background-color: rgb(96, 116, 152); */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -396,7 +361,6 @@ img.standings-team-logo {
 }
 
 .custom-section {
-    /* background-color: rgb(96, 116, 152); */
     flex-grow: 1;
     display: flex;
     flex-direction: column;
@@ -589,6 +553,19 @@ span.shop-item-desc {
     cursor: pointer;
 }
 
+#cart-count-number {
+    font-size: 12px;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+    background-color: #EA3A3A;
+    color: white;
+    border-radius: 75px;
+    padding: 2px 6px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
 .cart-row {
     display: flex;
     align-items: center;
@@ -645,6 +622,7 @@ span.cart-quant-header {
 }
 
 .cart-button {
+    position: relative;
     font-size: 30px;
     margin-top: 10px;
 }
@@ -673,6 +651,7 @@ span.cart-quant-header {
     width: 100%;
     position: relative;
     bottom: 0;    
+    margin-top: auto;
     text-align: center;
     padding: 10px
 }
@@ -687,35 +666,64 @@ span.cart-quant-header {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 767px) {
 
-.main-section {
-    min-width: 100vw;
-    margin: 0;
+#index_main_section {
+    flex-direction: column;
 }
 
-#fantasy-main-section {
+ul.navigation-links li.hamburger-menu {
+    display: block;
+}
 
+.nav-wrapper {
+    display: none;
+}
+
+.home-right-side {
+    margin-top: 0;
+}
+
+ul.navigation-links.expanded .nav-wrapper {
+    display: block;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 100px;
+    color: black;
+    z-index: 1;
+    background: white;
+    box-shadow: 2px 2px 5px -4px black;
+    font-size: 0.8rem;
+}
+
+ul.navigation-links.expanded .nav-wrapper li {
+    border-top: 1px solid gray;
 }
 
 .list-header-main {
-    /* flex-wrap: wrap; */
     width: 100vw;
+}
+
+.standings-buttons {
+    font-size: 0.9em;
 }
 
 h1.list-header {
-    /* flex-wrap: wrap; */
-    width: 100vw;
+    font-size: 1.4em;
 }
 
-.standings-section {
-    /* flex-wrap: wrap; */
-    width: 100%
-    
+.cat-headings {
+    font-size: 0.8em;
+}
+
+.standings-section span{
+    /* width: 100% */
+    font-size: 0.8em;
 }
 
 .standings-table {
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 }

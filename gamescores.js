@@ -1,6 +1,8 @@
+//some url's for needed API's
 const urlLineScores = 'https://api-web.nhle.com/v1/score/now';
 const urlNumOfGames = 'https://api-web.nhle.com/v1/schedule/now';
 
+//this function gets NHL game data for the current day and adds the information to the top of each site
 async function getGameScores() {
     const responseNumGames = await fetch(urlNumOfGames);
     const dataNumGames = await responseNumGames.json();

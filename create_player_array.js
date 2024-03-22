@@ -1,3 +1,5 @@
+//These are some variables and arrays needed
+
 const playerList = [];
 const teamAbbrevList = [
     "TOR", "WSH", "BUF", "OTT", "TBL", "CAR", "MTL", "NJD", "DAL", "PIT", "SJS", "FLA", "COL", "NYI", "DET", "SEA", "CBJ", "ANA", "BOS", "CHI", "WPG", "STL", "EDM", "MIN", "VAN", "NSH", "CGY", "NYR", "ARI", "LAK", "VGK", "PHI"];
@@ -13,22 +15,15 @@ let playerStatList = [];
 let playerPortrait = "";
 let tempPortrait = "";
 
-// const searchInput = document.querySelector(".player-search");
-// const input = searchInput.querySelector("input");
-// const resultBox = searchInput.querySelector(".result-box");
-
+//this function is used for API Requests
 async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
-    // console.log(data);
     return data;
 }
 
+//This function is used to build the initial array of currently active NHL players
 async function addPlayerToArray() {
-    // currentPlayerFetch = idCode.toString();
-    // urlPlayerStatFetch = `https://api-web.nhle.com/v1/player/${currentPlayerFetch}/landing`;
-    // let currentData = await getData(urlPlayerStatFetch);
-    // console.log(currentData);
     for (let x = 0; x < teamAbbrevList.length; x++) {
         currentTeamFetch = teamAbbrevList[x];
         urlTeamRosterFetch = `https://api-web.nhle.com/v1/roster/${currentTeamFetch}/current`;
@@ -60,6 +55,7 @@ async function addPlayerToArray() {
     }
 }
 
+//this function is used to add needed details to the active player array
 function appendToPlayerArray(firstName, lastName, playerPos, playerID, portrait) {
     const newPlayer = {firstName, lastName, playerPos, playerID, portrait};
     playerList.push(newPlayer);
@@ -67,38 +63,7 @@ function appendToPlayerArray(firstName, lastName, playerPos, playerID, portrait)
 
 addPlayerToArray();
 
-// input.onkeyup = (e) => {
-//     let userSearch = e.target.value;
-//     let emptyArray = [];
-//     if (userSearch) {
-//         emptyArray = playerList.filter((data) => {
-//             return data.toLocaleLowerCase().startsWith(userSearch.toLocaleLowerCase());
-//         });
-//         emptyArray = emptyArray.map((data) => {
-//             return data = '<li>' + data + '</li>';
-//         });
-//         searchInput.classList.add("active");
-//         showSuggestions(emptyArray);
-//         let allList = resultBox.querySelectorAll("li");
-//         for (let x = 0; x < allList.length; x++) {
-//             allList[x].setAttribute("onclick", "select(this)");
-//         }
-//     } else {
-//         searchInput.classList.remove("active");
-//     }
-// }
-
-// function showSuggestions(list) {
-//     let listData;
-//     if(!list.length) {
-//         userValue = inputBox.value;
-//         listData = '<li>' + userValue + '</li>';
-//     } else {
-//         listData = list.join('');
-//     }
-//     resultBox.innerHTML = listData;
-// }
-
+//this function returns the searched player's playerID from the active player array
 function pullPlayerCode() {
     let fullName = "";
     let userSearch = document.getElementById("player-search").value;
@@ -111,6 +76,7 @@ function pullPlayerCode() {
     }
 }
 
+//this returns a players current season stats based on the playerID 
 async function pullPlayerStats() {
     let data = pullPlayerCode();
     currentPlayerFetch = data.toString();
@@ -120,6 +86,7 @@ async function pullPlayerStats() {
     return playerStatList;
 }
 
+//This adds the searched player and their relevant stats to the roster side of the table
 async function newRosterCard() {
     playerStatList = await pullPlayerStats();    
     let x = document.getElementById("player-search").value;
@@ -138,6 +105,7 @@ async function newRosterCard() {
     savePage();
 }
 
+//this adds the searched player and their relevant stats to the watchlist side of the table
 async function newWatchlistCard(playerName) {
     playerStatList = await pullPlayerStats();    
     let x = document.getElementById("player-search").value;
@@ -156,12 +124,14 @@ async function newWatchlistCard(playerName) {
     savePage();
 }
 
+//this function saves the current list of players to localStorage
 function savePage() {
     let content = document.getElementById("player-section").innerHTML;
     localStorage.setItem("customPlayerList", content);
     console.log(localStorage.getItem("customPlayerList"));
 }
 
+//this loads any players saved in localStorage
 function loadPage() {
     let content = localStorage.getItem("customPlayerList");
     console.log(content);

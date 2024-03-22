@@ -1,3 +1,4 @@
+//This function checks to see if the item is already in the cart, and either Adds it or increases the quantity
 function addToCartClicked() {
     let buttonClicked = event.target;
     let itemAdded = buttonClicked.parentElement.parentElement;
@@ -17,6 +18,7 @@ function addToCartClicked() {
     }
 }
 
+//This function Adds the item to the list of cart items
 function AddToCart(image, price, title) {
     let cartRow = document.createElement('div');
     cartRow.classList.add('cart-row');
@@ -35,6 +37,7 @@ function AddToCart(image, price, title) {
     
 }
 
+//this function returns whether the item to add is in the cart or not
 function checkCartContents(itemAdded) {
     let cartContents = document.getElementsByClassName('cart-contents')[0];
     let itemTitle = cartContents.getElementsByClassName('cart-item-title');
@@ -47,6 +50,7 @@ function checkCartContents(itemAdded) {
     return isThere;
 }
 
+//This function updates quantity of the item already in the cart
 function updateCartQuantity(itemAdded) {
     let cartContents = document.getElementsByClassName('cart-contents')[0];
     let itemToUpdate = cartContents.getElementsByClassName('cart-item-quantity');
@@ -57,6 +61,7 @@ function updateCartQuantity(itemAdded) {
     }
 }
 
+//this function removes the entire line item from the cart
 function delShopItem(event) {
     event.stopPropagation();
     let buttonClicked = event.target;
@@ -64,7 +69,9 @@ function delShopItem(event) {
     doTheMath();
 }
 
+//This function updates the total of the cart contents whenever it is changed
 function doTheMath() {
+    let cartCount = 0;
     let total = 0;
     let itemPrice = 0;
     let itemAmount = 0;
@@ -77,29 +84,16 @@ function doTheMath() {
         itemAmount = currentRow.getElementsByClassName('cart-item-quantity')[0].value;
         totalToAdd = itemPrice * itemAmount;
         total = total + totalToAdd;
+        cartCount = Number(cartCount) + Number(itemAmount);
     }
     total = total.toFixed(2);
     document.getElementsByClassName('cart-total-display')[0].innerText = " $" + total;
+    document.getElementById("cart-count-number").innerText = cartCount;
 }
 
+//this function either shows or hides the cart depending on display value
 function toggleCart() {
     let el = document.getElementById("cart-section");
     el.style.display = (el.style.display != "block") ? "block":"none";
-    // if (el.style.display == "block") {
-    //     el.style.display = "none";
-    // } else {
-    //     el.style.display = "block";
-    // }
 }
 
-// const onClickOutside = (element,callback) => {
-//     document.addEventListener("click",e => {
-//         if (!document.getElementById(element).contains(e.target)) {
-//             callback();
-//         }
-//     })
-// }
-
-// onClickOutside("#cart-section",() => {
-//     document.getElementById("cart-section").style.display = "none";
-// })

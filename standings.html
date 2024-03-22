@@ -7,22 +7,25 @@
     <script src="scripts.js"></script>
     <script src="gamescores.js"></script>
     <script src="standings.js"></script>
-    <title>FHB</title>
+    <title>Current NHL standings</title>
     <link rel="preconnect" href="https://fonts.googleapis.com%22%3E/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/415bbafa7b.js" crossorigin="anonymous"></script>
 </head>
 <body onload="getGameScores(), createLeagueTable(document.querySelector('.standings-buttons li:first-child'))">
     <div class="game-listings" id="game-listings">
     </div>
     <header class="page-header">
         <div class="banner-bar content-container">      
-            <img src="./images/Fantasy Hockey Transparent Background.png" alt="Fantasy Hockey Book Logo" class="mini-logo" onclick="loadHomePage()">      
-            <!-- <span class="title-span">FHB</span> -->
+            <img src="./images/Fantasy Hockey Transparent Background.png" alt="Fantasy Hockey Book Logo" class="mini-logo" onclick="loadHomePage()">
             <ul class="navigation-links">
-                <li onclick="loadStandingsPage()">Standings</li>
-                <li onclick="loadFantasyPage()">Fantasy Team</li>
-                <li onclick="loadShopPage()">Shop</li>
+                <li class="hamburger-menu"><i class="fa-solid fa-bars" onclick="toggleMobileMenu()"></i></li>
+                <div class="nav-wrapper">
+                    <li onclick="loadStandingsPage()">Standings</li>
+                    <li onclick="loadFantasyPage()">Fantasy Team</li>
+                    <li onclick="loadShopPage()">Shop</li>
+                </div> 
             </ul>
         </div>
     </header>
@@ -36,7 +39,6 @@
             </ul>
         </div>       
         <div class="standings-section">
-            
             <div class="list-header-main"><h1 class="list-header">League Standings</h1>
             </div>     
             <div class="extra-list-header">
@@ -51,7 +53,6 @@
                 <h3 class="points-total points-col">Points</h3>
             </div>
             <div class="standings-table" id="standings-table">
-
             </div>
         </div>        
     </div>

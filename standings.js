@@ -1,3 +1,4 @@
+//Needed variables
 const standingsUrl = 'https://api-web.nhle.com/v1/standings/now';
 const standingsArray = [];
 const atlanticArray = [];
@@ -20,12 +21,14 @@ let teamLogo = "";
 let confAbbrev = "";
 let divAbbrev = "";
 
+//Function for API Fetch Requests
 async function getData(url) {
     const response = await fetch(url);
     const data = await response.json();
     return data;
 }
 
+//Function to create initial league wide standings array
 async function createStandingsArray() {
     let standingsData = await getData(standingsUrl);
     for (let x = 0; x < standingsData.standings.length; x++) {
@@ -43,10 +46,9 @@ async function createStandingsArray() {
 
         standingsArray.push(teamObject);
     }
-    console.log(standingsData.standings[0]);
 }
 
-
+//Function to add table to site for entire leagues standings
 async function createLeagueTable(el) {
     if (standingsArray.length == 0) {
         await createStandingsArray();
@@ -76,6 +78,7 @@ async function createLeagueTable(el) {
     }
 }
 
+//function to sort entire league into their respective conferences
 function createConferenceArray() {
     for (let x = 0; x < standingsArray.length; x++) {
         if (standingsArray[x].confAbbrev == "W") {
@@ -86,6 +89,7 @@ function createConferenceArray() {
     }
 }
 
+//function to sort entire league into their respective divisions
 function createDivisionArray() {
     for (let x = 0; x < standingsArray.length; x++) {
         if (standingsArray[x].divAbbrev == "A") {
@@ -102,6 +106,7 @@ function createDivisionArray() {
     }
 }
 
+//function to determine WildCard standings of teams not in a Division Playoff spot
 function createWildCardArray() {
     let eastAtlCheck = 0;
     let eastMetCheck = 0;
@@ -136,6 +141,7 @@ function createWildCardArray() {
     }
 }
 
+//Function to add table to site for Conference Standings
 function createConferenceTable(el) {
     if (westernArray.length === 0) {
         createConferenceArray();
@@ -194,6 +200,7 @@ function createConferenceTable(el) {
     }
 }
 
+//Function to add table to site for Division Standings
 function createDivisionTable(el) {
     if (atlanticArray.length == 0) {
         createDivisionArray();
@@ -305,6 +312,7 @@ function createDivisionTable(el) {
     }
 }
 
+//Function to show Current Division Playoff Teams and the Wild Card race
 function createWildCardTable(el) {
     if (easternWildCard.length == 0) {
         createWildCardArray();
@@ -486,6 +494,5 @@ function createWildCardTable(el) {
         }
     }
 }
-// createLeagueTable();
 
 
